@@ -1,6 +1,6 @@
 import { useState, useEffect  } from "react";
 import axios from "axios";
-
+import './weatherApp.css';
 
 function WeatherApp (){
 
@@ -26,27 +26,31 @@ function WeatherApp (){
 
    return(
    <>
-     <nav className="navbar"> Weather App</nav>
+     <nav className="nav-bar"><h1> Weather App</h1></nav>
       <div className="form-div">
         
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="form">
                
-                <input type="text" placeholder="enter your city name" required
+                <input type="text" placeholder="Enter your city name" required className="city"
                     onChange={(e) => { setCity(e.target.value) }} /> <br />
 
-                <button type="submit">get weather</button>
+                <button type="submit">Submit </button>
             </form>
          </div>
          {(weatherData === null) ? null :
-         <div>
-             {Math.round(weatherData?.main?.temp)}°C
-                    
-                    min: {Math.round(weatherData?.main?.temp_min)}°C
-                  
-                    max: {Math.round(weatherData?.main?.temp_max)}°C
-                    Feels Like: {Math.round(weatherData?.main?.feels_like)}°C
-                    Humidity: {Math.round(weatherData?.main?.humidity)}°C
-         
+         <div  >
+            <div className="today"> {Math.round(weatherData?.main?.temp)}°C</div>
+                <div className="flex">
+                   <div className="left">
+                <div>  min: {Math.round(weatherData?.main?.temp_min)}°C <br /></div>  
+                <div>  max: {Math.round(weatherData?.main?.temp_max)}°C <br /></div>  
+                    </div>
+                    <div className="right">
+                    <div> Feels Like: {Math.round(weatherData?.main?.feels_like)}°C <br /></div>  
+                    <div>   Humidity: {Math.round(weatherData?.main?.humidity)}°C <br /></div>  
+
+                    </div>
+                    </div>  
          </div>
      
 
