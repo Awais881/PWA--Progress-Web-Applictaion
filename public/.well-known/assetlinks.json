@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "sh.surge.weather_app_forcaste.twa",
+                     "sha256_cert_fingerprints": ["54:65:68:F6:C2:48:A3:7C:C1:91:E7:1A:5D:73:B3:B3:1C:43:C2:02:E7:41:AC:2C:77:0C:39:51:42:D6:22:9E"] }
+      }
+]
